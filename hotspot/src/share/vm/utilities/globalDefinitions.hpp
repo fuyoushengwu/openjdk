@@ -1296,7 +1296,7 @@ inline int build_int_from_shorts( jushort low, jushort high ) {
 #endif  // _LP64
 
 #define SSIZE_FORMAT          "%" PRIdPTR
-#define SIZE_FORMAT           "%" PRIuPTR
+#define SIZE_FORMAT           "%"+PRIuPTR
 #define SSIZE_FORMAT_W(width) "%" #width PRIdPTR
 #define SIZE_FORMAT_W(width)  "%" #width PRIuPTR
 
