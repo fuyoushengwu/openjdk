@@ -146,7 +146,7 @@ private:
   void check_offset(size_t offset, const char* msg) const {
     assert(offset <= N_words,
            err_msg("%s - "
-                   "offset: " UINT32_FORMAT", N_words: " UINT32_FORMAT,
+                   "offset: " UINT32_FORMAT ", N_words: " UINT32_FORMAT,
                    msg, offset, N_words));
   }
 

@@ -139,7 +139,7 @@ inline struct dirent* os::readdir(DIR* dirp, dirent *dbuf)
   // version. Here is the doc for this function:
   // http://www.gnu.org/manual/glibc-2.2.3/html_node/libc_262.html
 
-  if((status = ::readdir_r(dirp, dbuf, &p)) != 0) {
+  if((status = ::readdir(dirp, dbuf, &p)) != 0) {
     errno = status;
     return NULL;
   } else

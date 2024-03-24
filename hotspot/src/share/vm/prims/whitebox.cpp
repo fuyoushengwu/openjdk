@@ -104,8 +104,8 @@ WB_END
 
 WB_ENTRY(void, WB_PrintHeapSizes(JNIEnv* env, jobject o)) {
   CollectorPolicy * p = Universe::heap()->collector_policy();
-  gclog_or_tty->print_cr("Minimum heap "SIZE_FORMAT" Initial heap "
-    SIZE_FORMAT" Maximum heap "SIZE_FORMAT" Min alignment "SIZE_FORMAT" Max alignment "SIZE_FORMAT,
+  gclog_or_tty->print_cr("Minimum heap " SIZE_FORMAT " Initial heap "
+    SIZE_FORMAT " Maximum heap " SIZE_FORMAT " Min alignment " SIZE_FORMAT " Max alignment " SIZE_FORMAT,
     p->min_heap_byte_size(), p->initial_heap_byte_size(), p->max_heap_byte_size(),
     p->space_alignment(), p->heap_alignment());
 }
@@ -140,8 +140,8 @@ WB_ENTRY(void, WB_ReadFromNoaccessArea(JNIEnv* env, jobject o))
          Universe::narrow_oop_use_implicit_null_checks() )) {
     tty->print_cr("WB_ReadFromNoaccessArea method is useless:\n "
                   "\tUseCompressedOops is %d\n"
-                  "\trhs.base() is "PTR_FORMAT"\n"
-                  "\tUniverse::narrow_oop_base() is "PTR_FORMAT"\n"
+                  "\trhs.base() is " PTR_FORMAT "\n"
+                  "\tUniverse::narrow_oop_base() is " PTR_FORMAT "\n"
                   "\tUniverse::narrow_oop_use_implicit_null_checks() is %d",
                   UseCompressedOops,
                   rhs.base(),

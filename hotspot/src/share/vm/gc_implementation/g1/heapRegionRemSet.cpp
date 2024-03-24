@@ -88,7 +88,7 @@ protected:
     // concurrency.
 
     if (G1TraceHeapRegionRememberedSet) {
-      gclog_or_tty->print_cr("    PRT::Add_reference_work(" PTR_FORMAT "->" PTR_FORMAT").",
+      gclog_or_tty->print_cr("    PRT::Add_reference_work(" PTR_FORMAT "->" PTR_FORMAT ").",
                              from,
                              UseCompressedOops
                              ? (void *)oopDesc::load_decode_heap_oop((narrowOop*)from)
@@ -617,13 +617,13 @@ void OtherRegionsTable::scrub(CardTableModRefBS* ctbs,
 
   assert(_coarse_map.size() == region_bm->size(), "Precondition");
   if (G1RSScrubVerbose) {
-    gclog_or_tty->print("   Coarse map: before = "SIZE_FORMAT"...",
+    gclog_or_tty->print("   Coarse map: before = " SIZE_FORMAT "...",
                         _n_coarse_entries);
   }
   _coarse_map.set_intersection(*region_bm);
   _n_coarse_entries = _coarse_map.count_one_bits();
   if (G1RSScrubVerbose) {
-    gclog_or_tty->print_cr("   after = "SIZE_FORMAT".", _n_coarse_entries);
+    gclog_or_tty->print_cr("   after = " SIZE_FORMAT ".", _n_coarse_entries);
   }
 
   // Now do the fine-grained maps.
@@ -972,12 +972,12 @@ class NMethodMigrationOopClosure : public OopClosure {
         // we must have self forwarded the object
         assert(obj->is_forwarded(),
                err_msg("code roots should be immediately evacuated. "
-                       "Ref: "PTR_FORMAT", "
-                       "Obj: "PTR_FORMAT", "
+                       "Ref: " PTR_FORMAT ", "
+                       "Obj: " PTR_FORMAT ", "
                        "Region: "HR_FORMAT,
                        p, (void*) obj, HR_FORMAT_PARAMS(_from)));
         assert(obj->forwardee() == obj,
-               err_msg("not self forwarded? obj = "PTR_FORMAT, (void*)obj));
+               err_msg("not self forwarded? obj = " PTR_FORMAT, (void*)obj));
 
         // The object has been self forwarded.
         // Note, if we're during an initial mark pause, there is
