@@ -1317,14 +1317,14 @@ UNSAFE_END
 
 #define LANG "Ljava/lang/"
 
-#define OBJ LANG "Object;"
-#define CLS LANG "Class;"
-#define CTR LANG "reflect/Constructor;"
-#define FLD LANG "reflect/Field;"
-#define MTH LANG "reflect/Method;"
-#define THR LANG "Throwable;"
+#define OBJ "Ljava/lang/Object;"
+#define CLS "Ljava/lang/Class;"
+#define CTR "Ljava/lang/reflect/Constructor;"
+#define FLD "Ljava/lang/reflect/Field;"
+#define MTH "Ljava/lang/reflect/Method;"
+#define THR "Ljava/lang/Throwable;"
 
-#define DC0_Args LANG "String;[BII"
+#define DC0_Args "Ljava/lang/String;[BII"
 #define DC_Args  DC0_Args LANG "ClassLoader;" "Ljava/security/ProtectionDomain;"
 
 #define CC (char*)  /*cast a literal from (const char*)*/
