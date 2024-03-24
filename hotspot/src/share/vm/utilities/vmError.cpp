@@ -351,8 +351,8 @@ void VMError::report(outputStream* st) {
   STEP(15, "(printing type of error)")
 
      switch(_id) {
-       case OOM_MALLOC_ERROR:
-       case OOM_MMAP_ERROR:
+       case static_cast<int>(OOM_MALLOC_ERROR):
+       case static_cast<int>(OOM_MMAP_ERROR):
          if (_size) {
            st->print("# Native memory allocation ");
            st->print((_id == (int)OOM_MALLOC_ERROR) ? "(malloc) failed to allocate " :
@@ -389,7 +389,7 @@ void VMError::report(outputStream* st) {
            return;  // that's enough for the screen
          }
          break;
-       case INTERNAL_ERROR:
+       case static_cast<int>(INTERNAL_ERROR):
        default:
          break;
      }
