@@ -50,7 +50,7 @@ Dict* Type::_shared_type_dict = NULL;
 
 // Array which maps compiler types to Basic Types
 Type::TypeInfo Type::_type_info[Type::lastype] = {
-  { Bad,             T_ILLEGAL,    "bad",           false, static_cast<int>Node::NotAMachineReg, relocInfo::none          },  // Bad
+  { Bad,             T_ILLEGAL,    "bad",           false, static_cast<int>(Node::NotAMachineReg), relocInfo::none          },  // Bad
   { Control,         T_ILLEGAL,    "control",       false, 0,                    relocInfo::none          },  // Control
   { Bottom,          T_VOID,       "top",           false, 0,                    relocInfo::none          },  // Top
   { Bad,             T_INT,        "int:",          false, Op_RegI,              relocInfo::none          },  // Int
@@ -58,8 +58,8 @@ Type::TypeInfo Type::_type_info[Type::lastype] = {
   { Half,            T_VOID,       "half",          false, 0,                    relocInfo::none          },  // Half
   { Bad,             T_NARROWOOP,  "narrowoop:",    false, Op_RegN,              relocInfo::none          },  // NarrowOop
   { Bad,             T_NARROWKLASS,"narrowklass:",  false, Op_RegN,              relocInfo::none          },  // NarrowKlass
-  { Bad,             T_ILLEGAL,    "tuple:",        false, static_cast<int>Node::NotAMachineReg, relocInfo::none          },  // Tuple
-  { Bad,             T_ARRAY,      "array:",        false, static_cast<int>Node::NotAMachineReg, relocInfo::none          },  // Array
+  { Bad,             T_ILLEGAL,    "tuple:",        false, static_cast<int>(Node::NotAMachineReg), relocInfo::none          },  // Tuple
+  { Bad,             T_ARRAY,      "array:",        false, static_cast<int>(Node::NotAMachineReg), relocInfo::none          },  // Array
 
 #ifndef SPARC
   { Bad,             T_ILLEGAL,    "vectors:",      false, Op_VecS,              relocInfo::none          },  // VectorS
