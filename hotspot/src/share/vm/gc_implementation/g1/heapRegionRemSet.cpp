@@ -974,7 +974,7 @@ class NMethodMigrationOopClosure : public OopClosure {
                err_msg("code roots should be immediately evacuated. "
                        "Ref: " PTR_FORMAT ", "
                        "Obj: " PTR_FORMAT ", "
-                       "Region: "HR_FORMAT,
+                       "Region: " HR_FORMAT,
                        p, (void*) obj, HR_FORMAT_PARAMS(_from)));
         assert(obj->forwardee() == obj,
                err_msg("not self forwarded? obj = " PTR_FORMAT, (void*)obj));
@@ -1005,7 +1005,7 @@ public:
 void HeapRegionRemSet::migrate_strong_code_roots() {
   assert(hr()->in_collection_set(), "only collection set regions");
   assert(!hr()->isHumongous(),
-         err_msg("humongous region "HR_FORMAT" should not have been added to the collection set",
+         err_msg("humongous region " HR_FORMAT " should not have been added to the collection set",
                  HR_FORMAT_PARAMS(hr())));
 
   ResourceMark rm;

@@ -370,7 +370,7 @@ void YoungList::print() {
     if (curr == NULL)
       gclog_or_tty->print_cr("  empty");
     while (curr != NULL) {
-      gclog_or_tty->print_cr("  "HR_FORMAT", P: " PTR_FORMAT "N: " PTR_FORMAT ", age: %4d",
+      gclog_or_tty->print_cr("  " HR_FORMAT ", P: " PTR_FORMAT "N: " PTR_FORMAT ", age: %4d",
                              HR_FORMAT_PARAMS(curr),
                              curr->prev_top_at_mark_start(),
                              curr->next_top_at_mark_start(),
@@ -543,7 +543,7 @@ G1CollectedHeap::new_region_try_secondary_free_list() {
       HeapRegion* res = _free_list.remove_head();
       if (G1ConcRegionFreeingVerbose) {
         gclog_or_tty->print_cr("G1ConcRegionFreeing [region alloc] : "
-                               "allocated "HR_FORMAT" from secondary_free_list",
+                               "allocated " HR_FORMAT " from secondary_free_list",
                                HR_FORMAT_PARAMS(res));
       }
       return res;
@@ -2302,7 +2302,7 @@ public:
   virtual bool doHeapRegion(HeapRegion* hr) {
     unsigned region_gc_time_stamp = hr->get_gc_time_stamp();
     if (_gc_time_stamp != region_gc_time_stamp) {
-      gclog_or_tty->print_cr("Region "HR_FORMAT" has GC time stamp = %d, "
+      gclog_or_tty->print_cr("Region " HR_FORMAT " has GC time stamp = %d, "
                              "expected %d", HR_FORMAT_PARAMS(hr),
                              region_gc_time_stamp, _gc_time_stamp);
       _failures = true;
@@ -3628,7 +3628,7 @@ public:
     size_t occupied = hrrs->occupied();
     _occupied_sum += occupied;
 
-    gclog_or_tty->print_cr("Printing RSet for region "HR_FORMAT,
+    gclog_or_tty->print_cr("Printing RSet for region " HR_FORMAT,
                            HR_FORMAT_PARAMS(r));
     if (occupied == 0) {
       gclog_or_tty->print_cr("  RSet is empty");
@@ -6659,7 +6659,7 @@ class RegisterNMethodOopClosure: public OopClosure {
       HeapRegion* hr = _g1h->heap_region_containing(obj);
       assert(!hr->continuesHumongous(),
              err_msg("trying to add code root " PTR_FORMAT " in continuation of humongous region "HR_FORMAT
-                     " starting at "HR_FORMAT,
+                     " starting at " HR_FORMAT,
                      _nm, HR_FORMAT_PARAMS(hr), HR_FORMAT_PARAMS(hr->humongous_start_region())));
 
       // HeapRegion::add_strong_code_root() avoids adding duplicate
@@ -6667,7 +6667,7 @@ class RegisterNMethodOopClosure: public OopClosure {
       // as visited when we scan the strong code root lists during the GC.
       hr->add_strong_code_root(_nm);
       assert(hr->rem_set()->strong_code_roots_list_contains(_nm),
-             err_msg("failed to add code root " PTR_FORMAT " to remembered set of region "HR_FORMAT,
+             err_msg("failed to add code root " PTR_FORMAT " to remembered set of region " HR_FORMAT,
                      _nm, HR_FORMAT_PARAMS(hr)));
     }
   }
@@ -6691,12 +6691,12 @@ class UnregisterNMethodOopClosure: public OopClosure {
       HeapRegion* hr = _g1h->heap_region_containing(obj);
       assert(!hr->continuesHumongous(),
              err_msg("trying to remove code root " PTR_FORMAT " in continuation of humongous region "HR_FORMAT
-                     " starting at "HR_FORMAT,
+                     " starting at " HR_FORMAT,
                      _nm, HR_FORMAT_PARAMS(hr), HR_FORMAT_PARAMS(hr->humongous_start_region())));
 
       hr->remove_strong_code_root(_nm);
       assert(!hr->rem_set()->strong_code_roots_list_contains(_nm),
-             err_msg("failed to remove code root " PTR_FORMAT " of region "HR_FORMAT,
+             err_msg("failed to remove code root " PTR_FORMAT " of region " HR_FORMAT,
                      _nm, HR_FORMAT_PARAMS(hr)));
     }
   }
@@ -6729,7 +6729,7 @@ class MigrateCodeRootsHeapRegionClosure: public HeapRegionClosure {
 public:
   bool doHeapRegion(HeapRegion *hr) {
     assert(!hr->isHumongous(),
-           err_msg("humongous region "HR_FORMAT" should not have been added to collection set",
+           err_msg("humongous region " HR_FORMAT " should not have been added to collection set",
                    HR_FORMAT_PARAMS(hr)));
     hr->migrate_strong_code_roots();
     return false;
@@ -6814,7 +6814,7 @@ public:
       // Code roots should never be attached to a continuation of a humongous region
       assert(hrrs->strong_code_roots_list_length() == 0,
              err_msg("code roots should never be attached to continuations of humongous region "HR_FORMAT
-                     " starting at "HR_FORMAT", but has "INT32_FORMAT,
+                     " starting at " HR_FORMAT ", but has " INT32_FORMAT,
                      HR_FORMAT_PARAMS(hr), HR_FORMAT_PARAMS(hr->humongous_start_region()),
                      hrrs->strong_code_roots_list_length()));
       return false;

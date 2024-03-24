@@ -771,7 +771,7 @@ void StringTable::buckets_do(OopClosure* f, int start_idx, int end_idx) {
   assert(0 <= end_idx && end_idx <= limit,
          err_msg("end_idx (" INT32_FORMAT ") oob?", end_idx));
   assert(start_idx <= end_idx,
-         err_msg("Ordering: start_idx=" INT32_FORMAT", end_idx=" INT32_FORMAT,
+         err_msg("Ordering: start_idx=" INT32_FORMAT ", end_idx=" INT32_FORMAT,
                  start_idx, end_idx));
 
   for (int i = start_idx; i < end_idx; i += 1) {

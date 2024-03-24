@@ -50,7 +50,7 @@ class TraceStream : public StackObj {
   }
 
   void print_val(const char* label, s2 val) {
-    _st.print("%s = "INT32_FORMAT, label, val);
+    _st.print("%s = " INT32_FORMAT, label, val);
   }
 
   void print_val(const char* label, u4 val) {
@@ -58,11 +58,11 @@ class TraceStream : public StackObj {
   }
 
   void print_val(const char* label, s4 val) {
-    _st.print("%s = "INT32_FORMAT, label, val);
+    _st.print("%s = " INT32_FORMAT, label, val);
   }
 
   void print_val(const char* label, u8 val) {
-    _st.print("%s = "UINT64_FORMAT, label, val);
+    _st.print("%s = " UINT64_FORMAT, label, val);
   }
 
   void print_val(const char* label, s8 val) {

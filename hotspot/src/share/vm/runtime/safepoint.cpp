@@ -1296,9 +1296,9 @@ void SafepointSynchronize::print_statistics() {
                sstats->_time_to_exec_vmop / MICROUNITS);
 
     if (need_to_track_page_armed_status) {
-      tty->print(INT32_FORMAT"         ", sstats->_page_armed);
+      tty->print(INT32_FORMAT "         ", sstats->_page_armed);
     }
-    tty->print_cr(INT32_FORMAT"   ", sstats->_nof_threads_hit_page_trap);
+    tty->print_cr(INT32_FORMAT "   ", sstats->_nof_threads_hit_page_trap);
   }
 }
 

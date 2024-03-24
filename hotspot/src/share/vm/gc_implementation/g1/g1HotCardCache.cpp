@@ -123,7 +123,7 @@ void G1HotCardCache::drain(int worker_i,
             // In this case worker_i should be the id of a GC worker thread
             assert(SafepointSynchronize::is_at_safepoint(), "Should be at a safepoint");
             assert(worker_i < (int) (ParallelGCThreads == 0 ? 1 : ParallelGCThreads),
-                   err_msg("incorrect worker id: "INT32_FORMAT, worker_i));
+                   err_msg("incorrect worker id: " INT32_FORMAT, worker_i));
 
             into_cset_dcq->enqueue(card_ptr);
           }

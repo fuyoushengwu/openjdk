@@ -297,7 +297,7 @@ public:
 
     // Largest sized rem set region statistics
     HeapRegionRemSet* rem_set = max_rs_mem_sz_region()->rem_set();
-    out->print_cr("    Region with largest rem set = "HR_FORMAT", "
+    out->print_cr("    Region with largest rem set = " HR_FORMAT ", "
                   "size = " SIZE_FORMAT "K, occupied = " SIZE_FORMAT "K.",
                   HR_FORMAT_PARAMS(max_rs_mem_sz_region()),
                   round_to_K(rem_set->mem_size()),
@@ -319,7 +319,7 @@ public:
       (*current)->print_code_root_elems_info_on(out, total_code_root_elems());
     }
 
-    out->print_cr("    Region with largest amount of code roots = "HR_FORMAT", "
+    out->print_cr("    Region with largest amount of code roots = " HR_FORMAT ", "
                   "size = " SIZE_FORMAT "K, num_elems = " SIZE_FORMAT ".",
                   HR_FORMAT_PARAMS(max_code_root_mem_sz_region()),
                   round_to_K(max_code_root_rem_set->strong_code_roots_mem_size()),

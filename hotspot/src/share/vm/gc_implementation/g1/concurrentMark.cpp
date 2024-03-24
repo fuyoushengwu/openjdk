@@ -2995,7 +2995,7 @@ void ConcurrentMark::verify_no_cset_oops(bool verify_stacks,
       // not hold any more.
       HeapRegion* global_hr = _g1h->heap_region_containing_raw(global_finger);
       guarantee(global_finger == global_hr->bottom(),
-                err_msg("global finger: " PTR_FORMAT " region: "HR_FORMAT,
+                err_msg("global finger: " PTR_FORMAT " region: " HR_FORMAT,
                         global_finger, HR_FORMAT_PARAMS(global_hr)));
     }
 
@@ -3009,7 +3009,7 @@ void ConcurrentMark::verify_no_cset_oops(bool verify_stacks,
         HeapRegion* task_hr = _g1h->heap_region_containing_raw(task_finger);
         guarantee(task_finger == task_hr->bottom() ||
                   !task_hr->in_collection_set(),
-                  err_msg("task finger: " PTR_FORMAT " region: "HR_FORMAT,
+                  err_msg("task finger: " PTR_FORMAT " region: " HR_FORMAT,
                           task_finger, HR_FORMAT_PARAMS(task_hr)));
       }
     }
@@ -4144,7 +4144,7 @@ void CMTask::do_marking_step(double time_target_ms,
       if (_cm->verbose_low()) {
         gclog_or_tty->print_cr("[%u] we're scanning part "
                                "[" PTR_FORMAT ", " PTR_FORMAT ") "
-                               "of region "HR_FORMAT,
+                               "of region " HR_FORMAT,
                                _worker_id, _finger, _region_limit,
                                HR_FORMAT_PARAMS(_curr_region));
       }

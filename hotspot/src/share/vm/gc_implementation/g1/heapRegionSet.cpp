@@ -83,7 +83,7 @@ bool HeapRegionSetBase::verify_region(HeapRegion* hr,
     out->cr();
     out->print_cr("## [%s] %s", name(), error_message);
     out->print_cr("## Offending Region: " PTR_FORMAT, hr);
-    out->print_cr("   "HR_FORMAT, HR_FORMAT_PARAMS(hr));
+    out->print_cr("   " HR_FORMAT, HR_FORMAT_PARAMS(hr));
 #ifdef ASSERT
     out->print_cr("   containing set: " PTR_FORMAT, hr->containing_set());
 #endif // ASSERT

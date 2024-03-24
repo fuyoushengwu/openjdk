@@ -190,7 +190,7 @@ class ConstantPoolCacheEntry VALUE_OBJ_CLASS_SPEC {
     field_index_mask           = right_n_bits(field_index_bits),
     parameter_size_bits        = 8,  // subset of field_index_mask, range is 0..255
     // parameter_size_mask        = right_n_bits(parameter_size_bits),
-    parameter_size_mask        = ~((static_cast<unsigned int>(-1) << tos_state_shift) | (field_index_mask | parameter_size_mask))
+    parameter_size_mask        = ~((static_cast<unsigned int>(-1) << tos_state_shift) | (field_index_mask | parameter_size_bits))
 
   };
 

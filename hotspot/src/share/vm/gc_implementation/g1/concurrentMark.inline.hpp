@@ -420,7 +420,7 @@ inline void ConcurrentMark::grayRoot(oop obj, size_t word_size,
   // assert that word_size is under an upper bound which is its
   // containing region's capacity.
   assert(word_size * HeapWordSize <= hr->capacity(),
-         err_msg("size: " SIZE_FORMAT " capacity: " SIZE_FORMAT " "HR_FORMAT,
+         err_msg("size: " SIZE_FORMAT " capacity: " SIZE_FORMAT " " HR_FORMAT,
                  word_size * HeapWordSize, hr->capacity(),
                  HR_FORMAT_PARAMS(hr)));
 
