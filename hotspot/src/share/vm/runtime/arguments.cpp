@@ -3390,13 +3390,13 @@ static char* get_shared_archive_path() {
         file_sep_len + 20, mtInternal);
     if (shared_archive_path != NULL) {
       strncpy(shared_archive_path, jvm_path, jvm_path_len + 1);
-      strncat(shared_archive_path, os::file_separator(), file_sep_len);
-      strncat(shared_archive_path, "classes.jsa", 11);
+      strncat(shared_archive_path, os::file_separator(), file_sep_len+1);
+      strncat(shared_archive_path, "classes.jsa", 12);
     }
   } else {
     shared_archive_path = NEW_C_HEAP_ARRAY(char, strlen(SharedArchiveFile) + 1, mtInternal);
     if (shared_archive_path != NULL) {
-      strncpy(shared_archive_path, SharedArchiveFile, strlen(SharedArchiveFile) + 1);
+      strncpy(shared_archive_path, SharedArchiveFile, strlen(SharedArchiveFile) + 2);
     }
   }
   return shared_archive_path;
