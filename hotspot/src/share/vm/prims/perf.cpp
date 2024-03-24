@@ -295,12 +295,12 @@ PERF_END
 
 static JNINativeMethod perfmethods[] = {
 
-  {CC"attach",              CC "{"JLS"II)"BB,  FN_PTR(Perf_Attach)},
-  {CC"detach",              CC "{"BB")V",      FN_PTR(Perf_Detach)},
-  {CC"createLong",          CL_ARGS,          FN_PTR(Perf_CreateLong)},
-  {CC"createByteArray",     CBA_ARGS,         FN_PTR(Perf_CreateByteArray)},
-  {CC"highResCounter",      CC "{)J",          FN_PTR(Perf_HighResCounter)},
-  {CC"highResFrequency",    CC "{)J",          FN_PTR(Perf_HighResFrequency)}
+  {CC "attach",              CC "{"JLS"II)"BB,  FN_PTR(Perf_Attach)},
+  {CC "detach",              CC "{"BB")V",      FN_PTR(Perf_Detach)},
+  {CC "createLong",          CL_ARGS,          FN_PTR(Perf_CreateLong)},
+  {CC "createByteArray",     CBA_ARGS,         FN_PTR(Perf_CreateByteArray)},
+  {CC "highResCounter",      CC "{)J",          FN_PTR(Perf_HighResCounter)},
+  {CC "highResFrequency",    CC "{)J",          FN_PTR(Perf_HighResFrequency)}
 };
 
 #undef CBA_ARGS
