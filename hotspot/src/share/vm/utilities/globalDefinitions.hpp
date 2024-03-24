@@ -1295,7 +1295,9 @@ inline int build_int_from_shorts( jushort low, jushort high ) {
 #define PTR_FORMAT    "0x%08"  PRIxPTR
 #endif  // _LP64
 
+#ifndef PRIuPTR
 #define PRIuPTR       "lu"
+#endif // PRIuPTR
 
 #define SSIZE_FORMAT          "%"PRIdPTR
 #define SIZE_FORMAT           "%"PRIuPTR
