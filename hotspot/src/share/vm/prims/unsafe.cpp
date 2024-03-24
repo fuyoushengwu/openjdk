@@ -957,7 +957,7 @@ UNSAFE_ENTRY(jclass, Unsafe_DefineClass0(JNIEnv *env, jobject unsafe, jstring na
 UNSAFE_END
 
 
-#define DAC_Args CLS"[B["OBJ
+#define DAC_Args "Ljava/lang/Class[B[Ljava/lang/Object;"
 // define a class but do not make it known to the class loader or system dictionary
 // - host_class:  supplies context for linkage, access control, protection domain, and class loader
 // - data:  bytes of a class file, a raw memory address (length gives the number of bytes)
@@ -1636,7 +1636,7 @@ JNINativeMethod memcopy_methods_15[] = {
 };
 
 JNINativeMethod anonk_methods[] = {
-    {CC "defineAnonymousClass", CC "{" DAC_Args ")" CLS,      FN_PTR(Unsafe_DefineAnonymousClass)},
+    {CC "defineAnonymousClass", CC "{" DAC_Args ")Ljava/lang/Class;",      FN_PTR(Unsafe_DefineAnonymousClass)},
 };
 
 JNINativeMethod lform_methods[] = {
