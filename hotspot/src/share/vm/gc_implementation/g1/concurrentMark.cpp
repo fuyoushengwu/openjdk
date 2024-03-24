@@ -4516,9 +4516,9 @@ CMTask::CMTask(uint worker_id,
 #define G1PPRL_DOUBLE_H_FORMAT        "  %14s"
 
 // For summary info
-#define G1PPRL_SUM_ADDR_FORMAT(tag)    "  "tag":"G1PPRL_ADDR_BASE_FORMAT
-#define G1PPRL_SUM_BYTE_FORMAT(tag)    "  "tag": " SIZE_FORMAT
-#define G1PPRL_SUM_MB_FORMAT(tag)      "  "tag": %1.2f MB"
+#define G1PPRL_SUM_ADDR_FORMAT(tag)    "  " tag ":"G1PPRL_ADDR_BASE_FORMAT
+#define G1PPRL_SUM_BYTE_FORMAT(tag)    "  " tag ":  %lu"
+#define G1PPRL_SUM_MB_FORMAT(tag)      "  " tag ": %1.2f MB"
 #define G1PPRL_SUM_MB_PERC_FORMAT(tag) G1PPRL_SUM_MB_FORMAT(tag)" / %1.2f %%"
 
 G1PrintRegionLivenessInfoClosure::
@@ -4537,13 +4537,6 @@ G1PrintRegionLivenessInfoClosure(outputStream* out, const char* phase_name)
   // Print the header of the output.
   _out->cr();
   _out->print_cr(G1PPRL_LINE_PREFIX" PHASE %s @ %1.3f", phase_name, now);
-  _out->print_cr(G1PPRL_LINE_PREFIX" HEAP"
-                 G1PPRL_SUM_ADDR_FORMAT("committed")
-                 G1PPRL_SUM_ADDR_FORMAT("reserved")
-                 G1PPRL_SUM_BYTE_FORMAT("region-size"),
-                 g1_committed.start(), g1_committed.end(),
-                 g1_reserved.start(), g1_reserved.end(),
-                 HeapRegion::GrainBytes);
   _out->print_cr(G1PPRL_LINE_PREFIX);
   _out->print_cr(G1PPRL_LINE_PREFIX
                 G1PPRL_TYPE_H_FORMAT
