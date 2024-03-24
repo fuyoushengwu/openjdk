@@ -39,7 +39,6 @@
 # include "utilities/globalDefinitions_sparcWorks.hpp"
 #endif
 
-#include <cinttypes>
 #include "utilities/macros.hpp"
 
 // This file holds all globally used constants & types, class (forward)
@@ -1296,7 +1295,9 @@ inline int build_int_from_shorts( jushort low, jushort high ) {
 #define PTR_FORMAT    "0x%08"  PRIxPTR
 #endif  // _LP64
 
-#define SSIZE_FORMAT          "%" PRIdPTR
+#define PRIuPTR       "lu"
+
+#define SSIZE_FORMAT          "%"PRIdPTR
 #define SIZE_FORMAT           "%"PRIuPTR
 #define SSIZE_FORMAT_W(width) "%" #width PRIdPTR
 #define SIZE_FORMAT_W(width)  "%" #width PRIuPTR
