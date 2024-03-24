@@ -3396,7 +3396,7 @@ static char* get_shared_archive_path() {
   } else {
     shared_archive_path = NEW_C_HEAP_ARRAY(char, strlen(SharedArchiveFile) + 1, mtInternal);
     if (shared_archive_path != NULL) {
-      strncpy(shared_archive_path, SharedArchiveFile, strlen(SharedArchiveFile) + 2);
+      strncpy(shared_archive_path, SharedArchiveFile, strlen(SharedArchiveFile) + 3);
     }
   }
   return shared_archive_path;
