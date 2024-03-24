@@ -3396,7 +3396,10 @@ static char* get_shared_archive_path() {
   } else {
     shared_archive_path = NEW_C_HEAP_ARRAY(char, strlen(SharedArchiveFile) + 1, mtInternal);
     if (shared_archive_path != NULL) {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstringop-overflow"
       strncpy(shared_archive_path, SharedArchiveFile, strlen(SharedArchiveFile) + 2);
+#pragma GCC diagnostic pop
     }
   }
   return shared_archive_path;
