@@ -432,8 +432,8 @@ AC_DEFUN([PLATFORM_SET_COMPILER_TARGET_BITS_FLAGS],
   # keep track of these additions in ADDED_CFLAGS etc. These
   # will later be checked to make sure only controlled additions
   # have been made to CFLAGS etc.
-  ADDED_CFLAGS=" -m${OPENJDK_TARGET_CPU_BITS} -Wno-stringop-overflow -Wno-literal-suffix"
-  ADDED_CXXFLAGS=" -m${OPENJDK_TARGET_CPU_BITS} -Wno-stringop-overflow -Wno-literal-suffix"
+  ADDED_CFLAGS=" -m${OPENJDK_TARGET_CPU_BITS}"
+  ADDED_CXXFLAGS=" -m${OPENJDK_TARGET_CPU_BITS}"
   ADDED_LDFLAGS=" -m${OPENJDK_TARGET_CPU_BITS}"
 
   CFLAGS="${CFLAGS}${ADDED_CFLAGS}"
