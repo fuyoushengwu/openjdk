@@ -39,6 +39,7 @@
 # include "utilities/globalDefinitions_sparcWorks.hpp"
 #endif
 
+#include <cinttypes>
 #include "utilities/macros.hpp"
 
 // This file holds all globally used constants & types, class (forward)
