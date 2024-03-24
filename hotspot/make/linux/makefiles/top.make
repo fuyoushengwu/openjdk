@@ -87,19 +87,19 @@ $(Cached_plat): $(Plat_File)
 
 # make AD files as necessary
 ad_stuff: $(Cached_plat) $(adjust-mflags)
-	@$(MAKE) -f adlc.make -rRs  -j1 -dk -I $(GAMMADIR)/../make/common
+	@$(MAKE) -f adlc.make -rRs  -j1 -d -I $(GAMMADIR)/../make/common
 
 # generate JVMTI files from the spec
 jvmti_stuff: $(Cached_plat) $(adjust-mflags)
-	@$(MAKE) -f jvmti.make -rRs  -j1 -dk -I $(GAMMADIR)/../make/common
+	@$(MAKE) -f jvmti.make -rRs  -j1 -d -I $(GAMMADIR)/../make/common
 
 # generate trace files
 trace_stuff: jvmti_stuff $(Cached_plat) $(adjust-mflags)
-	@$(MAKE) -f trace.make -rRs  -j1 -dk -I $(GAMMADIR)/../make/common
+	@$(MAKE) -f trace.make -rRs  -j1 -d -I $(GAMMADIR)/../make/common
 
 # generate SA jar files and native header
 sa_stuff:
-	@$(MAKE) -f sa.make -rRs  -j1 -dk -I $(GAMMADIR)/../make/common
+	@$(MAKE) -f sa.make -rRs  -j1 -d -I $(GAMMADIR)/../make/common
 
 # and the VM: must use other makefile with dependencies included
 
@@ -116,7 +116,7 @@ $(adjust-mflags): $(GAMMADIR)/make/$(Platform_os_family)/makefiles/adjust-mflags
 
 the_vm: vm_build_preliminaries $(adjust-mflags)
 	@$(UpdatePCH)
-	@$(MAKE) -f vm.make -rRs  -j1 -dk -I $(GAMMADIR)/../make/common
+	@$(MAKE) -f vm.make -rRs  -j1 -d -I $(GAMMADIR)/../make/common
 
 install gamma: the_vm
 	@$(MAKE) -f vm.make $@
