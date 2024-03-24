@@ -3396,14 +3396,7 @@ static char* get_shared_archive_path() {
   } else {
     shared_archive_path = NEW_C_HEAP_ARRAY(char, strlen(SharedArchiveFile) + 1, mtInternal);
     if (shared_archive_path != NULL) {
-      //strncpy(shared_archive_path, SharedArchiveFile, strlen(SharedArchiveFile) + 2);
-      size_t len = strlen(SharedArchiveFile);
-      if (len + 2 < sizeof(shared_archive_path)) { // 确保有足够的空间
-          strncpy(shared_archive_path, SharedArchiveFile, len + 2);
-          shared_archive_path[len + 2] = '\0'; // 明确设置空字符终止
-      } else {
-          // 处理错误情况: 缓冲区太小，无法容纳字符串+额外2个字符
-      }
+      strncpy(shared_archive_path, SharedArchiveFile, strlen(SharedArchiveFile) + 2);
     }
   }
   return shared_archive_path;

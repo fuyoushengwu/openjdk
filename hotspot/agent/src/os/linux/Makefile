@@ -40,7 +40,7 @@ OBJS     = $(SOURCES:%.c=$(ARCH)/%.o) $(ARCH)/sadis.o
 
 LIBS     = -lthread_db
 
-CFLAGS   = -c -fPIC -g -D_GNU_SOURCE -D$(ARCH) $(INCLUDES) -I$(ARCH)
+CFLAGS   = -c -fPIC -g -D_GNU_SOURCE -D$(ARCH) $(INCLUDES) -I$(ARCH) -Wno-stringop-overflow
 
 LIBSA = $(ARCH)/libsaproc.so
 
